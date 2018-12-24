@@ -29,7 +29,8 @@
 
 ### `if` statements,`[]` and `[[]]`
 *Single bracket is the older, less intuitive one and will cause issues as it will continue on evaluated to nothing `$(grep nothing /dev/null)` which would compare to `[ = '']` and your script will behave weird. Use `[[]]` instead.*
-```
+
+```bash
 if [[ -f $logfile ]]; then
     echo "$(date +"%Y-%m-%d [%T]"):   $1" >> ${logfile};
     writeidlog "$1";
@@ -37,4 +38,5 @@ else
     touch $logfile;
     echo "$(date +"%Y-%m-%d [%T]"):   $1" >> ${logfile};
     writeidlog "$1";
-fi```
+fi
+```
